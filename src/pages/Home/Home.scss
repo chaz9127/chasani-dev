@@ -1,0 +1,19 @@
+.bio {
+    h2 {
+        font-size: 3.2em;
+    }
+}
+
+.work {
+    margin-top: 160px;
+}
+
+.projects-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.highlight {
+    background-color: rgba(14, 165, 233, 0.5);
+    padding: 0 4px;
+}
