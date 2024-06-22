@@ -3,7 +3,7 @@ export const projects = [
         thumbnailUrl: "/thumbnails/mcu-1.png",
         url: "https://themcu.fyi/",
         title: "TheMCU.fyi",
-        description: "Track your progress through the MCU. Save the properties you've watched while also being recommended what to watch beforehand.",
+        description: "Track your progress through the MCU. Save what you've watched while also being recommended what to watch beforehand.",
         technologies: ["React", "Typescript", "ExpressJS", "NodeJS", "MongoDB"]
     },
     {

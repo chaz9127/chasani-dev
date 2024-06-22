@@ -12,8 +12,7 @@ const Home = () => {
         <h2>🖖Hi there, I&apos;m Chasani!</h2>
         <p>But you can call me CJ. I&apos;m a <span className="highlight">Fullstack developer</span> looking
           to make tools that improve the life of yourself and your company.</p>
-        <p>I&apos;ve been a developer for 12 years and specialize in <span className="highlight">building web apps</span>
-          that are optimized for performance, user experience, and scalability.</p>
+        <p>I&apos;ve been a developer for 12 years and specialize in <span className="highlight">building web apps</span> that are optimized for performance, user experience, and scalability.</p>
       </div>
       <div className="work">
         <h3 className="work-heading">What I&apos;ve been up to</h3>
