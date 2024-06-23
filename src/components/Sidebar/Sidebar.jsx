@@ -1,12 +1,17 @@
 // src/components/Sidebar.jsx
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHref, useNavigate } from 'react-router-dom';
 import 'boxicons';
 import './Sidebar.scss';
 
 const Sidebar = () => {
   const [active, setActive] = useState(false);
   const [activeTab, setActiveTab] = useState('');
+  const navigate = useNavigate();
+  
+  const goToUrl = (url) => {
+    window.open(url, '_blank').focus();
+  }
 
   useEffect(() => {
     setTimeout(() => {
@@ -14,9 +19,14 @@ const Sidebar = () => {
       const pathname = window.location.pathname;
       const activeTabName = pathname !== '/' ? pathname.substring(1) : 'home';
       setActiveTab(activeTabName)
-    }, 300)
+    }, 100)
     
   }, []);
+  
+  const setAndNavigate = (tab, path) => {
+    setActiveTab(tab);
+    navigate(path);
+  }
 
   return (
     <div className={`sidebar`}>
@@ -32,15 +42,14 @@ const Sidebar = () => {
         </div>
         <nav>
           <ul>
-            <li onClick={() => {setActiveTab('home')}} className={activeTab === 'home' ? 'active' : '' }><i className="bx bx-home"></i><Link to="/">Home</Link></li>
-            <li onClick={() => {setActiveTab('about')}} className={activeTab === 'about' ? 'active' : '' }><i className='bx bx-message-rounded-detail' ></i><Link to="/about">About</Link></li>
-            <li onClick={() => {setActiveTab('projects')}} className={activeTab === 'projects' ? 'active' : '' }><i className='bx bx-windows'></i><Link to="/projects">Projects</Link></li>
-            <li onClick={() => {setActiveTab('resume')}} className={activeTab === 'resume' ? 'active' : '' }><i className='bx bx-file' ></i><Link to="/resume">Resume</Link></li>
+            <li onClick={() => {setAndNavigate('home', '/')}} className={activeTab === 'home' ? 'active' : '' }><i className="bx bx-home"></i>Home</li>
+            <li onClick={() => {setAndNavigate('about', '/about')}} className={activeTab === 'about' ? 'active' : '' }><i className='bx bx-message-rounded-detail' ></i>About</li>
+            <li onClick={() => {setAndNavigate('resume', 'resume')}} className={activeTab === 'resume' ? 'active' : '' }><i className='bx bx-file' ></i>Resume</li>
           </ul>
           <ul>
             <strong>Find Me</strong>
-            <li><i className='bx bxl-linkedin-square'></i><Link to="https://www.linkedin.com/in/chasani/" target="_blank">Linkedin</Link></li>
-            <li><i className='bx bxl-github' ></i><Link to="https://github.com/chaz9127" target="_blank">Github</Link></li>
+            <li onClick={() => {goToUrl('https://www.linkedin.com/in/chasani/')}}><i className='bx bxl-linkedin-square'></i>Linkedin</li>
+            <li onClick={() => {goToUrl('https://github.com/chaz9127')}}><i className='bx bxl-github' ></i>Github</li>
           </ul>
         </nav>
       </div>

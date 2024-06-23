@@ -11,9 +11,8 @@ const Project = (props) => {
     useEffect(() => {
         setTimeout(() => {
             setDisplay(true);
-            console.log('test', idx)
         }, 300*(idx*.5));
-    }, [])
+    }, []);
 
     const goTo = () => {
         window.open(url, '_blank').focus();
