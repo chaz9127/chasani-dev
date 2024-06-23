@@ -1,6 +1,5 @@
 .job-container {
     display: flex;
-    flex-direction: column;
     margin-top: 96px;
     opacity: 0;
     transform: translateX(-100%);
@@ -47,6 +46,7 @@
 
 @media (max-width: 768px) {
     .job-container {
+        flex-direction: column;
         margin-top: 48px;
         .date-range {
             font-size: 0.875rem;
