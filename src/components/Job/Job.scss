@@ -1,5 +1,6 @@
 .job-container {
     display: flex;
+    flex-direction: column;
     margin-top: 96px;
     opacity: 0;
     transform: translateX(-100%);
@@ -44,8 +45,28 @@
     }
 }
 
+@media (max-width: 768px) {
+    .job-container {
+        margin-top: 48px;
+        .date-range {
+            font-size: 0.875rem;
+        }
+        .job-details {
+            margin-left: 0;
+            .title {
+                font-size: 1.5rem;
+            }
+            .company {
+                font-size: 1rem;
+            }
+        }
+    }
+}
+
 @media (prefers-color-scheme: light) {
-    .job-container .job-details .bullet-point i {
-        color: rgba(0,0,0,0.6)
+    .job-container .job-details {
+        .bullet-point i {
+            color: rgba(0,0,0,0.6);
+        }
     }
   }
