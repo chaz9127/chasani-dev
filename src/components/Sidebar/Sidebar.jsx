@@ -29,7 +29,11 @@ const Sidebar = () => {
   }, [type])
 
   useEffect(() => {
-    document.getElementsByClassName('content')[0].addEventListener('click', closeSideNav)
+    document.getElementsByClassName('content')[0].addEventListener('click', () => {
+      if (window.screen.width < 768) {
+        closeSideNav
+      }
+  })
     setTimeout(() => {
       const screenWidth = window.screen.width;
       if (screenWidth > 768) {
