@@ -1,105 +1,139 @@
 // src/components/Sidebar.scss
 .sidebar {
-    position: fixed;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 250px;
-    background-color: #333;
-    color: white;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 250px;
+  background-color: #333;
+  color: white;
 
-    .name-card {
-      display: flex;
-      justify-content: space-between;
+  .name-card {
+    display: flex;
+    justify-content: space-between;
 
-      .name-card-img-container {
-        width: 50px;
-        height: 50px;
-        border-radius: 50px;
-        overflow: hidden;
-
-        .name-card-img {
-          width: 50px;
-        }
-      }
-
-      .name-card-name {
-        margin: 0;
-        padding: 0;
-        font-size: 16px;
-        margin-bottom: 6px;
-      }
-      .name-card-job {
-        margin: 0;
-        padding: 0;
-        font-size: 16px;
-        font-weight: 400;
-        color: rgba(255,255,255,0.6);
-      }
-    }
-
-    .sidebar-content {
-      padding: 40px 26px 0 30px;
+    .name-card-img-container {
+      width: 50px;
+      height: 50px;
+      border-radius: 50px;
       overflow: hidden;
-      opacity: 0;
-      transform: translateX(-100%);
-      transition: transform 0.3s ease-in-out, opacity 0.3s ease-in;
-    
-      &.active {
-        opacity: 1;
-        transform: translateX(0);
+
+      .name-card-img {
+        width: 50px;
       }
     }
-  
-    nav ul {
-      list-style-type: none;
+
+    .name-card-name {
+      margin: 0;
       padding: 0;
-      margin-top: 60px;
+      font-size: 16px;
+      margin-bottom: 6px;
+    }
+    .name-card-job {
+      margin: 0;
+      padding: 0;
+      font-size: 16px;
+      font-weight: 400;
+      color: rgba(255,255,255,0.6);
+    }
+  }
 
-      strong {
-        font-size: 20px;
-        margin-bottom: 24px;
-        display: inline-block;
-        border-bottom: 2px solid #0ea5e9;
-        padding-right: 20px;
-      }
+  .sidebar-content {
+    padding: 40px 26px 0 30px;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in;
   
-      li {
-        margin: 20px 0;
-        background-color: rgba(255,255,255,0);
-        margin-left: -5px;
-        margin-top: -5px;
-        box-sizing: border-box;
-        border-radius: 5px;
-        padding: 5px;
-        cursor: pointer;
-        color: rgba(255,255,255,0.6);
-        text-decoration: none;
-        font-size: 1.2rem;
-        font-weight: 400;
-        transition: color 0.3s ease-in-out;
+    &.active {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
 
-        &:hover {
-          color: rgba(255,255,255,1);
-        }
+  nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 60px;
 
+    strong {
+      font-size: 20px;
+      margin-bottom: 24px;
+      display: inline-block;
+      border-bottom: 2px solid #0ea5e9;
+      padding-right: 20px;
+    }
+
+    li {
+      margin: 20px 0;
+      background-color: rgba(255,255,255,0);
+      margin-left: -5px;
+      margin-top: -5px;
+      box-sizing: border-box;
+      border-radius: 5px;
+      padding: 5px;
+      cursor: pointer;
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+      font-size: 1.2rem;
+      font-weight: 400;
+      transition: color 0.3s ease-in-out;
+
+      &:hover {
+        color: rgba(255,255,255,1);
+      }
+
+      i {
+        font-size: 18px;
+        margin-right: 8px;
+      }
+
+      &.active {
+        overflow: hidden;
+        background-color: rgba(255,255,255,0.2);
+        width: 150px;
+        box-shadow: 0 3px 5px rgba(0,0,0,0.4);
+        transition: background-color 0.2s ease-in-out;
+        color: rgba(255,255,255,1);
         i {
-          font-size: 18px;
-          margin-right: 8px;
-        }
-
-        &.active {
-          overflow: hidden;
-          background-color: rgba(255,255,255,0.2);
-          width: 150px;
-          box-shadow: 0 3px 5px rgba(0,0,0,0.4);
-          transition: background-color 0.2s ease-in-out;
-          color: rgba(255,255,255,1);
-          i {
-            color: #0ea5e9;
-          }
+          color: #0ea5e9;
         }
       }
     }
   }
+}
+
+.expand-sidebar {
+  display: none;   
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    transform: translateX(-100%);
+    z-index: 1;
+    transition: transform 0.2s ease-in-out;
+
+    &.open-in-mobile {
+      transform: translateX(0);
+    }
+  }
+  .close-sidebar {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    right: 16px;
+    font-size: 48px;
+  }
+  .expand-sidebar {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 16px;
+    font-size: 64px;
+
+    i {
+      display: inline-block;
+    }
+  }
+}
   

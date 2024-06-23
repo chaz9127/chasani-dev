@@ -6,3 +6,11 @@
     max-width: 800px;
   }
 }
+
+@media (max-width: 768px) {
+  .app .content {
+    margin-left: 0;
+    width: 100%;
+    max-width: 100%;
+  }
+}
