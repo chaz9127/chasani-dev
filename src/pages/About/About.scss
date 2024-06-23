@@ -1,3 +1,9 @@
+.about-page {
+    p {
+        text-indent: 2rem;
+    }
+}
+
 .about-images {
     display: flex;
     justify-content: space-between;
@@ -29,6 +35,18 @@
             display: inline-block;
             width: 300px;
             margin-left: -50px;;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .about-images {
+        .about-image-container {
+            width: 100px;
+            img {
+                width: 150px;
+                margin-left: -50px;;
+            }
         }
     }
 }

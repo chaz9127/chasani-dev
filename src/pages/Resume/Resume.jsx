@@ -7,7 +7,7 @@ import './Resume.scss'
 const Resume = () => {
   return (
     <div>
-      <h1>📄Resume Page<a className="download-link" href="/Chasani_Resume.pdf">Download <i className='bx bxs-download' ></i></a></h1>
+      <h2>📄Resume Page<a className="download-link" href="/Chasani_Resume.pdf">Download <i className='bx bxs-download' ></i></a></h2>
       <p>
         Well-rounded Fullstack Engineer with over 12 years of experience building customer-facing and internal tools. Primarily
         focused in React accompanied by strong professional backend experience in backend languages such as Ruby on Rails and
