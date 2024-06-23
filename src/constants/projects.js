@@ -10,7 +10,7 @@ export const projects = [
         thumbnailUrl: "/thumbnails/bobby-1.png",
         url: "https://www.bobbysheehanlol.com/",
         title: "Bobby Sheehan LOL",
-        description: "Personal website for internation comedian Bobby Sheehan.",
+        description: "Personal website for NYC based comedian Bobby Sheehan.",
         technologies: ["Wix"]
     }
 ]

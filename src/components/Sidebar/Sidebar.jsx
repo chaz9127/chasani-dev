@@ -1,6 +1,6 @@
-// src/components/Sidebar.jsx
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useOrientation } from 'react-use';
 import 'boxicons';
 import './Sidebar.scss';
 
@@ -8,6 +8,7 @@ const Sidebar = () => {
   const [active, setActive] = useState(false);
   const [openMobileNav, setOpenMobileNav] = useState(false);
   const [activeTab, setActiveTab] = useState('');
+  const { type } = useOrientation(); 
   const navigate = useNavigate();
   
   const goToUrl = (url) => {
@@ -18,6 +19,14 @@ const Sidebar = () => {
     setOpenMobileNav(false)
     setActive(false);
   }
+
+  useEffect(() => {
+    if (type === 'landscape-primary' && window.screen.width > 768) {
+      setActive(true);
+    } else {
+      closeSideNav()
+    }
+  }, [type])
 
   useEffect(() => {
     document.getElementsByClassName('content')[0].addEventListener('click', closeSideNav)

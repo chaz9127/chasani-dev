@@ -1,5 +1,3 @@
-// src/pages/Home.jsx
-import React from 'react';
 import './Home.scss';
 import Project from '../../components/Project/Project';
 import { projects } from '../../constants/projects'
