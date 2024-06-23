@@ -6,6 +6,7 @@ import Home from './pages/Home/Home';
 import About from './pages/About/About';
 import Projects from './pages/Projects/Projects';
 import Resume from './pages/Resume/Resume';
+import Contact from './pages/Contact/Contact';
 import './App.scss';
 
 const App = () => {
@@ -19,6 +20,7 @@ const App = () => {
             <Route path="/about" element={<About />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/resume" element={<Resume />} />
+            <Route path="/contact" element={<Contact />} />
           </Routes>
         </div>
       </div>
