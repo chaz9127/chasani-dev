@@ -73,14 +73,15 @@ const Sidebar = () => {
             </div>
             <div className="name-card-info">
               <h1 className='name-card-name'>Chasani Douglas</h1>
-              <h2 className="name-card-job">Fullstack Engineer</h2>
+              <h3 className="name-card-job">Fullstack Engineer</h3>
             </div>
           </div>
           <nav>
             <ul>
               <li onClick={() => {setAndNavigate('home', '/')}} className={activeTab === 'home' ? 'active' : '' }><i className="bx bx-home"></i>Home</li>
               <li onClick={() => {setAndNavigate('about', '/about')}} className={activeTab === 'about' ? 'active' : '' }><i className='bx bx-message-rounded-detail' ></i>About</li>
-              <li onClick={() => {setAndNavigate('resume', 'resume')}} className={activeTab === 'resume' ? 'active' : '' }><i className='bx bx-file' ></i>Resume</li>
+              <li onClick={() => {setAndNavigate('resume', '/resume')}} className={activeTab === 'resume' ? 'active' : '' }><i className='bx bx-file' ></i>Resume</li>
+              <li onClick={() => {setAndNavigate('contact', '/contact')}} className={activeTab === 'contact' ? 'active' : '' }><i className='bx bx-envelope' ></i>Contact</li>
             </ul>
             <ul>
               <strong>Find Me</strong>

@@ -40,6 +40,11 @@ h1 {
   line-height: 1.1;
 }
 
+h2 {
+  font-size: 3.2rem;
+  margin: 50px 0 0 0;
+}
+
 button {
   border-radius: 8px;
   border: 1px solid transparent;
@@ -47,12 +52,17 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: rgba(14, 165, 233, 0.5);
   cursor: pointer;
-  transition: border-color 0.25s;
+  transition: background-color 0.25s;
+
+  &:disabled {
+    background-color: rgba(255, 255, 255, 0.2);
+    cursor:progress;
+  }
 }
-button:hover {
-  border-color: #646cff;
+button:hover:not([disabled]) {
+  background-color: rgba(14, 165, 233, 1);
 }
 button:focus,
 button:focus-visible {
@@ -80,6 +90,17 @@ p {
     color: #747bff;
   }
   button {
-    background-color: #f9f9f9;
+    background-color: rgba(0,0,0,0.1);
+    color: black;
+    
+    &:hover:not([disabled]) {
+      color: white;
+      background-color: rgba(14, 165, 233, 1);
+    }
+
+    &:disabled {
+      background-color: rgba(0, 0, 0, 0.2);
+      cursor:progress;
+    }
   }
 }
