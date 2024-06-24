@@ -38,7 +38,6 @@ const Contact = () => {
     }
     
     fetch('https://formsubmit.co/ajax/chasanid@gmail.com', options).then(resp => {
-      console.log({resp})
       return resp.json();
     }).then(data => {
       setLoading(false);

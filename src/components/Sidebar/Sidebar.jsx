@@ -31,7 +31,7 @@ const Sidebar = () => {
   useEffect(() => {
     document.getElementsByClassName('content')[0].addEventListener('click', () => {
       if (window.screen.width < 768) {
-        closeSideNav
+        closeSideNav()
       }
   })
     setTimeout(() => {
