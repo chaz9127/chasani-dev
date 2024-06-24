@@ -65,6 +65,9 @@ const Sidebar = () => {
       <div className="expand-sidebar">
         <i onClick={openSideNav} className='bx bx-menu-alt-left' ></i>
       </div>
+      {openMobileNav && <div className="close-sidebar">
+        <i onClick={closeSideNav} className='bx bx-arrow-to-left'></i>
+      </div>}
       <div className={`sidebar ${openMobileNav ? 'open-in-mobile' : ''}`}>
         <div className={`sidebar-content ${active ? 'active' : ''}`}>
           <div className="name-card">

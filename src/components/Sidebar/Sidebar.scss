@@ -120,9 +120,10 @@
   .close-sidebar {
     display: inline-block;
     position: absolute;
-    top: 0;
-    right: 16px;
-    font-size: 48px;
+    bottom: 0;
+    left: 202px;
+    font-size: 32px;
+    z-index: 2;
   }
   .expand-sidebar {
     display: inline-block;
