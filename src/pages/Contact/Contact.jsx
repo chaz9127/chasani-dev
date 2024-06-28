@@ -45,7 +45,7 @@ const Contact = () => {
     }).catch(err => {
       setLoading(false);
       setErrorMessage('There was an error sending the email. Try again and if it doesn\'t work you can find my email by downloading my resume.');
-    })
+    });
   }
   return (
     <div className="contact-page">
