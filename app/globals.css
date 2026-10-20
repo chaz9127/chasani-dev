@@ -1,0 +1,112 @@
+@import "tailwindcss";
+
+/* class-based dark mode, toggled on <html> */
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  color-scheme: light;
+  --paper: #f8f8f6;
+  --ink: #161616;
+  --muted: #5f5f5a;
+  --faint: #a3a39c;
+  --line: #e6e5e0;
+  --card: #ffffff;
+  --accent: #e8590c;
+  --accent-strong: #c2410c;
+  --on-accent: #ffffff;
+  --card-shadow: 0 10px 40px -12px rgb(22 22 22 / 0.12);
+}
+
+.dark {
+  color-scheme: dark;
+  --paper: #121211;
+  --ink: #ededea;
+  --muted: #a8a8a1;
+  --faint: #6f6f69;
+  --line: #2a2a27;
+  --card: #1a1a18;
+  --accent: #ff7a33;
+  --accent-strong: #c2410c;
+  --on-accent: #ffffff;
+  --card-shadow: 0 0 0 1px var(--line);
+}
+
+@theme inline {
+  --color-paper: var(--paper);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-faint: var(--faint);
+  --color-line: var(--line);
+  --color-card: var(--card);
+  --color-accent: var(--accent);
+  --color-accent-strong: var(--accent-strong);
+  --color-on-accent: var(--on-accent);
+  --shadow-card: var(--card-shadow);
+
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+section[id] {
+  scroll-margin-top: 5rem;
+}
+
+/* cards fade in with an 8px rise as they scroll into view */
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+}
+
+/* block cursor after the intro name: blinks hard on/off, stays solid under reduced motion */
+@keyframes name-cursor {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* theme toggle knob slides from the other side (offset matches translate-x-6) */
+@keyframes knob-slide-right {
+  from {
+    transform: translateX(-1.5rem);
+  }
+}
+
+@keyframes knob-slide-left {
+  from {
+    transform: translateX(1.5rem);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .knob-slide-right {
+    animation: knob-slide-right 200ms ease-out;
+  }
+
+  .knob-slide-left {
+    animation: knob-slide-left 200ms ease-out;
+  }
+
+  .name-cursor {
+    animation: name-cursor 1.06s steps(1, end) infinite;
+  }
+
+  @supports (animation-timeline: view()) {
+    .reveal {
+      animation: reveal linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 40%;
+    }
+  }
+}
