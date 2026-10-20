@@ -1,13 +1,8 @@
 import { site } from "@/content/site";
 
-// Captured once into the static shell; refreshed on each build/revalidation.
-async function getYear() {
-  "use cache";
-  return new Date().getFullYear();
-}
-
-export async function Footer() {
-  const year = await getYear();
+export function Footer() {
+  // the site is exported as static HTML, so this is the year of the last build
+  const year = new Date().getFullYear();
 
   return (
     <footer className="px-5 py-10 text-center text-sm text-faint">
