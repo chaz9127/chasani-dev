@@ -31,9 +31,9 @@ export type Site = {
                            // ["I'm a software engineer at Acme.",
                            //  "I love building small, fast tools people enjoy using."]
                            // The "Check out my projects below." line is added by the component.
-  contactBlurb: string;    // one friendly sentence for the contact section
-  email: string;
-  links: { label: string; href: string }[]; // LinkedIn, GitHub, ...
+  email: string;           // mail icon link under the intro
+  links: { label: string; href: string; icon: "linkedin" | "github" }[];
+                           // shown as icon links under the intro
   resumeUrl: "/resume.pdf";
   meta: { title: string; description: string; ogImage?: string };
 };

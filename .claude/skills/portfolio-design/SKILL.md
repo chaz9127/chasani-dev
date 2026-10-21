@@ -25,11 +25,12 @@ Before writing UI, check that none of these slip in:
 - No 3-column "features" grid with an icon in a colored circle.
 - No "dark mode" that is just inverted colors or pure `#000` black. Dark mode uses its own
   warm palette (section 3).
-- Icons: only four inline SVGs are allowed: an external-link icon and the GitHub mark in
-  the project buttons, and a sun and moon in the theme toggle knob. No icon library.
+- Icons: only these inline SVGs are allowed: an external-link icon and the GitHub mark in
+  the project buttons, the mail, LinkedIn, and GitHub icons in the intro contact row, and a sun
+  and moon in the theme toggle knob. No icon library.
 - No lorem ipsum. Use the content files, and leave a clear `TODO:` if content is missing.
 - No Title Case Headings and no marketing words ("innovative", "cutting-edge", "synergy").
-- No extra sections. The site is **intro, projects, contact**, nothing else: no resume page,
+- No extra sections. The site is **intro (with contact links) and projects**, nothing else: no contact section, no resume page,
   no experience timeline, no skills grid, no stats strip, no terminal/code-style about block.
 
 ## 2. Layout
@@ -38,10 +39,10 @@ Before writing UI, check that none of these slip in:
   so lines stay readable; project cards use the full container width.
 - Generous space between sections (`py-20 sm:py-28`). The intro gets extra room above and
   below (`pt-24 pb-20 sm:pt-36 sm:pb-28`) so it breathes like the inspiration.
-- **Section headings** (Projects, Contact) are **centered**: `h2` in sans, `text-3xl
+- **Section headings** (Projects) are **centered**: `h2` in sans, `text-3xl
   font-normal text-ink`, then a short accent bar under it (`mt-4 mx-auto h-1 w-16
   rounded-full bg-accent`). Generous space (`mb-14`) before the content.
-- **Header**: links on the right only, `Projects  Contact  Resume ↗`, then the theme
+- **Header**: links on the right only, `Projects  Resume ↗`, then the theme
   toggle. Wide spacing between links (`gap-8 sm:gap-12`), `text-muted`, hover `text-ink`.
   No name/logo on the left, because the intro already shows the name. Sticky, page-colored,
   with a hairline bottom border that appears only after scrolling. At 360px the links stay
@@ -210,13 +211,11 @@ Left-aligned, in this order:
 - The card itself is **not** a link (links inside a link are invalid HTML).
 - Hover on the card: none. Hover lives on the buttons only.
 
-### Contact (`#contact`)
+### Contact links (in the intro)
 
-- Centered heading "Contact me!" with the accent bar.
-- One friendly centered sentence (e.g. "I'm always happy to chat about projects, ideas, or
-  good coffee.").
-- Below it, a centered row of text links: `Email ↗  LinkedIn ↗  GitHub ↗`, `text-muted`,
-  hover `text-accent`, wrapping on small screens. The email link is a `mailto:`.
+- There is no contact section. Directly under the intro lines (`mt-6`), a left-aligned
+  row of 20px icon links: email (`mailto:`), LinkedIn, and GitHub (the last two in a new
+  tab). Each has an `aria-label` and `title`. `text-muted`, hover `text-accent`.
 
 ### Resume link (nav only)
 

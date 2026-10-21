@@ -27,9 +27,6 @@ export function Header() {
         <a href="#projects" className={linkClass}>
           Projects
         </a>
-        <a href="#contact" className={linkClass}>
-          Contact
-        </a>
         <a
           href={site.resumeUrl}
           target="_blank"

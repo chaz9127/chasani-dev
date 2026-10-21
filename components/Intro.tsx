@@ -1,6 +1,12 @@
 import { site } from "@/content/site";
 import type { IntroLine } from "@/content/types";
+import { GitHubIcon, LinkedInIcon, MailIcon } from "./icons";
 import { TypedName } from "./TypedName";
+
+const icons = { linkedin: LinkedInIcon, github: GitHubIcon };
+
+const contactLinkClass =
+  "flex rounded-sm text-muted transition-colors duration-150 hover:text-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent motion-reduce:transition-none";
 
 const linkClass =
   "rounded-sm font-semibold text-accent underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent";
@@ -41,6 +47,35 @@ export function Intro() {
           Check out my <IntroLink label="projects" href="#projects" /> below.
         </p> */}
       </div>
+      <ul className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-3 text-lg">
+        <li>
+          <a
+            href={`mailto:${site.email}`}
+            aria-label="Email"
+            title={site.email}
+            className={`${contactLinkClass} [&_svg]:size-5`}
+          >
+            <MailIcon />
+          </a>
+        </li>
+        {site.links.map(({ label, href, icon }) => {
+          const Icon = icons[icon];
+          return (
+            <li key={label} className="flex">
+              <a
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={label}
+                title={label}
+                className={`${contactLinkClass} [&_svg]:size-5`}
+              >
+                <Icon />
+              </a>
+            </li>
+          );
+        })}
+      </ul>
     </section>
   );
 }

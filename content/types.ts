@@ -4,9 +4,8 @@ export type IntroLine = string | (string | { label: string; href: string })[];
 export type Site = {
   name: string;
   intro: IntroLine[];
-  contactBlurb: string;
   email: string;
-  links: { label: string; href: string }[];
+  links: { label: string; href: string; icon: "linkedin" | "github" }[];
   resumeUrl: "/resume.pdf";
   meta: { title: string; description: string; ogImage?: string };
 };
