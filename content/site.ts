@@ -18,5 +18,6 @@ export const site: Site = {
     title: "Chasani Douglas",
     description:
       "I'm a Frontend Engineer who loves creating interactive digital experiences that bring joy to people.",
+    ogImage: "/og.png",
   },
 };

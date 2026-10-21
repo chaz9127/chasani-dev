@@ -6,6 +6,7 @@ import { site } from "@/content/site";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://chasani.dev"),
   title: site.meta.title,
   description: site.meta.description,
   openGraph: {
