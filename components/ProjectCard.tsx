@@ -62,7 +62,7 @@ export function ProjectCard({ project }: { project: Project }) {
               rel="noopener noreferrer"
               className={`${buttonBase} bg-accent-strong text-on-accent hover:brightness-110`}
             >
-              Live demo
+              Live
               <ExternalLinkIcon />
             </a>
           )}
