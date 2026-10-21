@@ -4,7 +4,7 @@ export const site: Site = {
   name: "Chasani Douglas",
   intro: [
     "I'm a Frontend Engineer currently looking for work.",
-    "I love creating interactive digital experiences that bring joy to people.",
+    "I’m a Frontend Engineer who builds interactive experiences that make products more enjoyable to use.",
     ["Did you ", { label: "Woggle", href: "#woggle" }, " today?"],
   ],
   contactBlurb: "Find me here:",
@@ -17,7 +17,7 @@ export const site: Site = {
   meta: {
     title: "Chasani Douglas",
     description:
-      "I'm a Frontend Engineer who loves creating interactive digital experiences that bring joy to people.",
+      "I’m a Frontend Engineer who builds interactive experiences that make products more enjoyable to use.",
     ogImage: "/og.png",
   },
 };
