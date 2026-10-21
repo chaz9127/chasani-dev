@@ -22,7 +22,7 @@ export function ProjectCard({ project }: { project: Project }) {
             alt={imageAlt ?? ""}
             fill
             sizes="(min-width: 768px) 40vw, 100vw"
-            className="object-cover"
+            className="object-cover object-left"
           />
         ) : (
           <div className="absolute inset-0 flex items-center justify-center bg-paper p-6">
@@ -31,11 +31,11 @@ export function ProjectCard({ project }: { project: Project }) {
         )}
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-0 hidden bg-card [clip-path:polygon(78%_0,100%_0,100%_100%,62%_100%)] md:block"
+          className="pointer-events-none absolute -right-1 inset-0 hidden bg-card [clip-path:polygon(78%_0,100%_0,100%_100%,62%_100%)] md:block"
         />
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-0 hidden bg-accent/20 [clip-path:polygon(68%_0,78%_0,62%_100%,50%_100%)] md:block"
+          className="pointer-events-none absolute -right-1 inset-0 hidden bg-accent/20 [clip-path:polygon(68%_0,78%_0,62%_100%,50%_100%)] md:block"
         />
       </div>
 
