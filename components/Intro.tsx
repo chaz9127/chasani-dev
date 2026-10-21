@@ -1,5 +1,6 @@
 import { site } from "@/content/site";
 import type { IntroLine } from "@/content/types";
+import { TypedName } from "./TypedName";
 
 const linkClass =
   "rounded-sm font-semibold text-accent underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent";
@@ -28,13 +29,9 @@ function renderLine(line: IntroLine) {
 export function Intro() {
   return (
     <section id="about" className="max-w-2xl py-20 sm:py-28">
-      <h1 className="font-mono text-5xl font-normal tracking-tight text-accent sm:text-7xl">
+      <h1 className="whitespace-nowrap font-mono text-[min(3.75rem,calc((100vw-2.5rem)/11))] font-normal tracking-tight text-accent sm:text-[min(3.75rem,calc((100vw-4rem)/11))]">
         <span aria-hidden="true">&gt; </span>
-        {site.name}
-        <span
-          aria-hidden="true"
-          className="name-cursor ml-[0.12em] inline-block h-[0.85em] w-[0.25em] translate-y-[0.1em] bg-accent"
-        />
+        <TypedName name={site.name} />
       </h1>
       <div className="mt-12 space-y-1 text-lg leading-loose text-muted">
         {site.intro.map((line, i) => (

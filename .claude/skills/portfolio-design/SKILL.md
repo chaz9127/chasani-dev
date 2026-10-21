@@ -138,7 +138,8 @@ overrides in components; if one seems necessary, add or adjust a token instead.
 - Base 16px. Body paragraphs `text-lg leading-loose text-muted` in the intro,
   `leading-relaxed` elsewhere.
 - **Intro name**: Geist Mono, `font-normal`, `text-accent`,
-  `text-5xl sm:text-7xl tracking-tight`, prefixed with `> ` (the prompt character is part
+  `whitespace-nowrap tracking-tight`, on one line at every width (font size is fluid, capped at
+  3.75rem, see `Intro.tsx`), prefixed with `> ` (the prompt character is part
   of the heading text, wrapped in a span with `aria-hidden="true"`), and followed by a
   blinking accent block cursor (also `aria-hidden`; see Motion).
 - Section `h2`: sans, `text-3xl font-normal`, sentence case.
@@ -234,14 +235,16 @@ Left-aligned, in this order:
   transitions on button and link hover.
 - The one exception to "subtle": a block cursor after the name blinks with a hard on/off
   step (about 1s per cycle, no fade). Under reduced motion it stays solid.
-- Everything is disabled under `motion-reduce:`. No parallax, no custom mouse cursors, and
-  no typewriter effect on the name.
+- The name is typed out once on load (`TypedName`, client component) with the block cursor
+  trailing it, then the cursor starts blinking. Under reduced motion the name shows
+  immediately.
+- Everything is disabled under `motion-reduce:`. No parallax and no custom mouse cursors.
 
 ## 8. Engineering conventions
 
 - Next.js App Router with TypeScript. A single page (`app/page.tsx`) plus layout.
 - Server Components by default; `"use client"` only for the theme toggle, the sticky
-  header's scroll border, and the scroll-in wrapper.
+  header's scroll border, the scroll-in wrapper, and the typed name.
 - `next/image` for every image, with real `alt` text and `sizes`
   (`(min-width: 768px) 40vw, 100vw`).
 - Semantic HTML: one `h1`, `section` elements with `id`s for anchor links, `nav`, `footer`.
